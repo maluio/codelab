@@ -1,0 +1,8 @@
+src/Example.php:19 PhanUndeclaredClassMethod Call to method __construct from undeclared class \my_class (Did you mean class \MyClass)
+src/Example.php:23 PhanTypeMismatchArgumentInternalProbablyReal Argument 1 ($obj) is $cond of type bool but \SplObjectStorage::attach() takes object
+src/Example.php:24 PhanUndeclaredMethod Call to undeclared method \SplObjectStorage::atach (Did you mean expr->attach())
+src/Example.php:25 PhanParamTooManyInternal Call with 3 arg(s) to \SplObjectStorage::attach(object $obj, $inf = unknown) which only takes 2 arg(s)
+src/Example.php:26 PhanTypeMismatchArgument Argument 1 ($x) is $argc of type int but \MyClass::__construct() takes ?string defined at src/Example.php:38
+src/Example.php:33 PhanUndeclaredVariable Variable $argv is undeclared (Did you mean $arg or $argc or (global $argv))
+src/Example.php:34 PhanTypeMismatchReturnReal Returning $arg of type \SplObjectStorage but demo() is declared to return ?int
+src/Example.php:40 PhanUndeclaredProperty Reference to undeclared property \MyClass->x

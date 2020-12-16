@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  app:
+    # uses home made image from "template" repo
+    image: php7.4-apache
+    ports:
+      - "80:80"
+    user: "1000:1000"
+    volumes:
+      - .:/var/www/html/
+    # allow to listen on priviliged port as non-root
+    sysctls:
+      - net.ipv4.ip_unprivileged_port_start=0
+    environment:
+      APACHE _DOCUMENT_ROOT: /var/www/html/app/public

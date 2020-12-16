@@ -1,0 +1,13 @@
+lexik_jwt_authentication:
+    secret_key:       '%kernel.project_dir%/config/jwt/private.pem' # required for token creation
+    public_key:       '%kernel.project_dir%/config/jwt/public.pem'  # required for token verification
+    pass_phrase:      'foofoo' # required for token creation, usage of an environment variable is recommended
+    token_ttl:        3600
+            # check token in query string parameter
+    token_extractors:
+        # check token in query string parameter
+        # I only activate this because apache doesn't play well with the token in the Authorization header
+        # see https://github.com/lexik/LexikJWTAuthenticationBundle/blob/master/Resources/doc/index.md#important-note-for-apache-users
+        query_parameter:
+            enabled: true
+            name:    bearer
